@@ -66,6 +66,11 @@ body {
         top: 30px;
         left: 37.2px;
         rotate: 45deg;
+
+        @media (max-width: 600px) {
+            top: 6%;
+            left: 8.5%;
+        }
     }
     &__second_diaganal {
         height: 9px;
@@ -73,40 +78,49 @@ body {
         top: 426px;
         left: 32.5px;
         rotate: -45deg;
+
+        @media (max-width: 600px) {
+            top: 91%;
+            left: 7%;
+        }
     }
 
     &__first_row {
         width: 100%;
-        top: 70px;
+        top: 15.3%;
         left: 0px;
+
+        @media (max-width: 400px) {
+            top: 14.5%;
+        }
     }
     &__second_row {
         width: 100%;
-        top: 228px;
+        top: 49%;
         left: 0px;
     }
     &__third_row {
         width: 100%;
-        top: 386px;
+        top: 83%;
         left: 0px;
     }
 
     &__first_column {
         width: 100%;
         top: 0;
-        left: 77px;
+        left: 16.8%;
         rotate: 90deg;
     }
     &__second_column {
         width: 100%;
         top: 0;
-        left: 236px;
+        left: 50.7%;
         rotate: 90deg;
     }
     &__third_column {
         width: 100%;
         top: 0;
-        left: 395px;
+        left: 84.6%;
         rotate: 90deg;
     }
 }
