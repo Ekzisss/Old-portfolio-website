@@ -8,17 +8,17 @@ const x = '<svg width="16px" class="x" fill="currentColor" height="16px" viewBox
 
 cells.forEach(element => {
     element.addEventListener("click", (item) => {
-        if (item.target.innerHTML == "" & game) {
+        if (game) {
             if (player) {
                 item.target.innerHTML = x;
             } else {
                 item.target.innerHTML = o;
             }
-            turn_counts+=1
+            turn_counts+=1;
             win_check();
             player = !player;
         }
-    })
+    }, {once: true})
 });
 
 function win_check() {
@@ -73,10 +73,6 @@ function win_check() {
         }
     } 
 
-    // console.log(cells[1].nnerHTML === cells[4].innerHTML & cells[4].innerHTML === cells[7].innerHTML);
-    // console.log(cells[1].nnerHTML === cells[4].innerHTML);
-    // console.log(cells[1].nnerHTML === cells[7].innerHTML);
-    // console.log(cells[4].innerHTML === cells[7].innerHTML);
     if (turn_counts == 9 & game) {
         tie();
     }
