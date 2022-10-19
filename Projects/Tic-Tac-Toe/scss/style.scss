@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+@import "reset.scss";
+
+body {
+    background: #c7ab9f;
+    color: rgb(84, 84, 84);
+}
+
+* {
+    box-sizing: content-box !important;
+}
+
+.main {
+    box-sizing: border-box !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    height: 100vh;
+
+    font-family: "Mulish";
+}
+
+.title {
+    font-size: 80px;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 0 20px;
+
+    @media (max-width: 390px) {
+        text-align: center;
+    }
+
+    @media (max-height: 500px) {
+        font-size: 50px;
+    }
+
+    padding-top: 50px;
+
+    @media (max-height: 750px) {
+        padding-top: 0;
+    }
+}
+
+.win {
+    font-size: 0px;
+    font-weight: bold;
+    height: 80px;
+    width: 300px;
+    text-align: center;
+    padding-bottom: 50px;
+
+    transition: all 0.3s;
+
+    &._active {
+        font-size: 60px;
+    }
+
+    @media (max-height: 750px) {
+        padding-bottom: 0;
+    }
+}
+
+.line {
+    background-color: #fff;
+    height: 5px;
+    text-align: center;
+    width: 0;
+    top: 233px;
+    left: 233px;
+    writing-mode: sideways-lr;
+    transform-origin: top left;
+
+    transition: width 1s;
+
+    position: absolute;
+
+    &__first_diaganal {
+        height: 9px;
+        width: 120%;
+        top: 30px;
+        left: 37.2px;
+        rotate: 45deg;
+
+        @media (max-width: 600px) {
+            top: 6%;
+            left: 8.5%;
+        }
+    }
+    &__second_diaganal {
+        height: 9px;
+        width: 120%;
+        top: 426px;
+        left: 32.5px;
+        rotate: -45deg;
+
+        @media (max-width: 600px) {
+            top: 91%;
+            left: 7%;
+        }
+    }
+
+    &__first_row {
+        width: 100%;
+        top: 15.3%;
+        left: 0px;
+
+        @media (max-width: 400px) {
+            top: 14.5%;
+        }
+    }
+    &__second_row {
+        width: 100%;
+        top: 49%;
+        left: 0px;
+    }
+    &__third_row {
+        width: 100%;
+        top: 83%;
+        left: 0px;
+    }
+
+    &__first_column {
+        width: 100%;
+        top: 0;
+        left: 16.8%;
+        rotate: 90deg;
+    }
+    &__second_column {
+        width: 100%;
+        top: 0;
+        left: 50.7%;
+        rotate: 90deg;
+    }
+    &__third_column {
+        width: 100%;
+        top: 0;
+        left: 84.6%;
+        rotate: 90deg;
+    }
+}
+
+.game {
+    position: relative;
+
+    &__row {
+        display: flex;
+        border-bottom: 8px solid rgba(128, 128, 128, 0.7);
+
+        display: table;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__cell {
+        height: 150px;
+        width: 150px;
+
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+
+        &:nth-child(2) {
+            border-left: 8px solid rgba(128, 128, 128, 0.7);
+            border-right: 8px solid rgba(128, 128, 128, 0.7);
+        }
+
+        @media (max-width: 600px) {
+            height: clamp(5.625rem, 1.754rem + 19.35vw, 9.375rem);
+            width: clamp(5.625rem, 1.754rem + 19.35vw, 9.375rem);
+        }
+    }
+}
+
+.x {
+    width: 95%;
+    height: 95%;
+    fill: rgb(84, 84, 84);
+    pointer-events: none;
+}
+
+.o {
+    width: 60%;
+    text-align: center;
+    fill: rgb(242, 235, 211);
+    pointer-events: none;
+}
+
+.animation {
+    transform: translate(-260px, -210px);
+}
