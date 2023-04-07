@@ -134,8 +134,7 @@ body {
   width: 0;
   top: 233px;
   left: 233px;
-  -ms-writing-mode: sideways-lr;
-      writing-mode: sideways-lr;
+  writing-mode: sideways-lr;
   transform-origin: top left;
   transition: width 1s;
   position: absolute;

@@ -401,7 +401,7 @@ body {
       background: url(../img/svg/skills/html.svg) center/75% no-repeat;
 
       &::after {
-        content: "90%";
+        content: "95%";
       }
     }
   }
@@ -411,7 +411,7 @@ body {
       background: url(../img/svg/skills/css.svg) center/75% no-repeat;
 
       &::after {
-        content: "70%";
+        content: "80%";
       }
     }
   }
@@ -421,7 +421,7 @@ body {
       background: url(../img/svg/skills/scss.svg) center/75% no-repeat;
 
       &::after {
-        content: "95%";
+        content: "100%";
       }
     }
   }
@@ -431,7 +431,7 @@ body {
       background: url(../img/svg/skills/js.svg) center/75% no-repeat;
 
       &::after {
-        content: "50%";
+        content: "70%";
       }
     }
   }
@@ -442,6 +442,26 @@ body {
 
       &::after {
         content: "60%";
+      }
+    }
+  }
+
+  &__item--react {
+    .skill__icon {
+      background: url(../img/svg/skills/react.svg) center/75% no-repeat;
+
+      &::after {
+        content: "40%";
+      }
+    }
+  }
+
+  &__item--nodejs {
+    .skill__icon {
+      background: url(../img/svg/skills/nodejs.svg) center/75% no-repeat;
+
+      &::after {
+        content: "30%";
       }
     }
   }
@@ -546,6 +566,8 @@ body {
     img {
       max-width: 100%;
       z-index: 1;
+      border-radius: 15px;
+      filter: drop-shadow(5px 5px 10px #000000);
     }
   }
 
