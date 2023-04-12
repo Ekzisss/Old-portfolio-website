@@ -803,7 +803,6 @@ a {
 }
 
 .decoration__box {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   box-sizing: content-box;
   right: -30px;

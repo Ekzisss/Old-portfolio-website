@@ -69,3 +69,91 @@ $(window).scroll(function () {
     typewriter3.typeString('Contact me').pauseFor(Infinity).start();
   }
 });
+
+// from
+
+// $('.contact-me__form').submit(function (el) {
+//   el.preventDefault();
+
+//   const form = $('form');
+
+//   let error = formValidations(form);
+
+//   if (error === 0) {
+//   } else {
+//     alert('Заполните поля');
+//   }
+// });
+
+function formValidations(form) {
+  let error = 0;
+  let formReq = form.querySelectorAll('._req');
+
+  formReq.forEach((el) => {
+    formRemoveError(el);
+    console.log(el);
+    if (el.classList.contains('_email')) {
+      if (emailTest(el)) {
+        formAddError(el);
+        error++;
+      }
+    } else {
+      if (el.value === '') {
+        formAddError(el);
+        error++;
+      }
+    }
+  });
+  return error;
+}
+function formAddError(input) {
+  input.parentElement.classList.add('_error');
+  input.classList.add('_error');
+}
+function formRemoveError(input) {
+  input.parentElement.classList.remove('_error');
+  input.classList.remove('_error');
+}
+function emailTest(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+var form = document.getElementById('my-form');
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById('my-form-status');
+  var data = new FormData(event.target);
+
+  let error = formValidations(document.querySelector('.contact-me__form'));
+
+  if (error === 0) {
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          status.innerHTML = 'Thanks for your message!';
+          form.reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data['errors'].map((error) => error['message']).join(', ');
+            } else {
+              status.innerHTML = 'Oops! There was a problem submitting your form';
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        status.innerHTML = 'Oops! There was a problem submitting your form';
+      });
+  } else {
+    status.innerHTML = 'Заполните поля';
+  }
+}
+form.addEventListener('submit', handleSubmit);

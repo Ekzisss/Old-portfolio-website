@@ -867,6 +867,10 @@ body {
     margin: auto;
     position: relative;
 
+    ._error {
+      box-shadow: 0 0 10px red;
+    }
+
     textarea {
       padding-top: 15px;
       height: 150px !important;
@@ -887,6 +891,8 @@ body {
 
     transition: all 0.2s;
     position: relative;
+
+    margin-bottom: 15px;
 
     &:hover {
       background-color: rgba(#ca973e, 0.7);

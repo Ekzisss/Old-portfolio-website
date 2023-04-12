@@ -509,7 +509,12 @@
             almazzz-2@yandex.ru
           </div>
         </div>
-        <form class="contact-me__form">
+        <form
+          class="contact-me__form"
+          id="my-form"
+          action="https://formspree.io/f/xvonvbzq"
+          method="POST"
+        >
           <input
             name="name"
             placeholder="Name"
@@ -517,26 +522,50 @@
             class="contact-me__input contact-me__input--half"
           />
           <input
-            required
             name="email"
             placeholder="Email"
-            type="email"
-            class="contact-me__input contact-me__input--half"
+            type="text"
+            class="contact-me__input contact-me__input--half _req _email"
           />
           <input
             name="subject"
             placeholder="Subject"
             type="text"
-            class="contact-me__input"
+            class="contact-me__input _req"
           />
           <textarea
-            required
-            name="msg"
+            name="message"
             placeholder="Message"
-            class="contact-me__input"
+            class="contact-me__input _req"
           ></textarea>
-          <button class="contact-me__button">Send message!</button>
+          <button
+            type="submit"
+            class="contact-me__button"
+            id="my-form-button"
+          >
+            Send message!
+          </button>
+          <p id="my-form-status"></p>
         </form>
+
+        <!-- <form
+          id="my-form"
+          action="https://formspree.io/f/xvonvbzq"
+          method="POST"
+        >
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+          />
+          <label>Message:</label>
+          <input
+            type="text"
+            name="message"
+          />
+          <button id="my-form-button">Submit</button>
+          <p id="my-form-status"></p>
+        </form> -->
       </div>
     </div>
 

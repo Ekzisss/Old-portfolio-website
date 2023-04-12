@@ -812,6 +812,9 @@ body {
   margin: auto;
   position: relative;
 }
+.contact-me__form ._error {
+  box-shadow: 0 0 10px red;
+}
 .contact-me__form textarea {
   padding-top: 15px;
   height: 150px !important;
@@ -827,6 +830,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   transition: all 0.2s;
   position: relative;
+  margin-bottom: 15px;
 }
 .contact-me__button:hover {
   background-color: rgba(202, 151, 62, 0.7);
